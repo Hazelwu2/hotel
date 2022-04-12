@@ -2,7 +2,7 @@ import http from 'http'
 import app from './app.js'
 import db from './db.js'
 
-const PORT = 3005
+const PORT = process.env.PORT || 3005
 
 // 資料庫連接
 db()
