@@ -1,7 +1,13 @@
 import mongoose from 'mongoose'
+import 'dotenv/config'
+
+const DB = process.env.DB_URL.replace(
+  '<PASSWORD>',
+  process.env.DB_PASSWORD
+)
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/test')
+  await mongoose.connect(DB)
 }
 
 export default main
