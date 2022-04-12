@@ -17,13 +17,14 @@ const successHandle = ({
 }
 
 const errorHandle = ({
-  res, status = 'failed', statusCode = 400, message = '操作有誤', data = {}
+  res, status = 'failed', statusCode = 400, message = '操作有誤，欄位未正確填寫', data = {}, error
 }) => {
   res.writeHead(statusCode, headers)
   res.end(JSON.stringify({
     status,
     message,
-    data
+    data,
+    error
   }))
 }
 

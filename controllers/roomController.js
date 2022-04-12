@@ -34,18 +34,32 @@ export const createRooms = async (req, res) => {
         errorHandle({
           res,
           statusCode: 400,
+          error: error
         })
       })
   } catch (error) {
     errorHandle({
       res,
       statusCode: 500,
+      error
     })
     console.log(error)
   }
 
 }
 
-export const getRooms = async (req, res, next) => {
+export const getRooms = async (req, res) => {
 
+}
+
+export const deleteRooms = async (req, res) => {
+  try {
+    const rooms = await Room.deleteMany({})
+
+    successHandle({ res, message: '刪除成功', data: [] })
+
+  } catch (error) {
+    console.error(error)
+    errorHandle({ res })
+  }
 }
