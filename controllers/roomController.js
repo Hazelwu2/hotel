@@ -49,17 +49,43 @@ export const createRooms = async (req, res) => {
 }
 
 export const getRooms = async (req, res) => {
+  try {
+    const rooms = await Room.find({})
 
+    successHandle({
+      res,
+      data: rooms
+    })
+
+  } catch (error) {
+    errorHandle({
+      res,
+      statusCode: 500,
+      error
+    })
+    console.log(error)
+  }
 }
 
+// 刪除所有房間
 export const deleteRooms = async (req, res) => {
   try {
-    const rooms = await Room.deleteMany({})
+    await Room.deleteMany({})
 
     successHandle({ res, message: '刪除成功', data: [] })
 
   } catch (error) {
     console.error(error)
     errorHandle({ res })
+  }
+}
+
+// 刪除單間房間
+export const deleteRoom = async (req, res) => {
+  try {
+    const { id } = req.url
+    Room.findByIdAndDelete()
+  } catch (error) {
+    console.log(error)
   }
 }
