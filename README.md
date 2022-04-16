@@ -18,7 +18,7 @@
 ## 🛖 About This Project
 設計一個 /rooms 路由，CRUD
 
-* 上傳 [GitHub](https://github.com/Hazelwu2/posts-mongoose-week2.git)
+* 上傳 [GitHub](https://github.com/Hazelwu2/hotel.git)
 * .env 忽略，不能在 GitHub 上
 * 請連接 mongodb 雲端 atlas 資料庫
 * dotenv 加上環境變數，讓程式更安全
@@ -48,7 +48,7 @@ API 規格
 
 1. Clone the Repo
   ```sh
-    git clone https://github.com/Hazelwu2/hotel.git
+    git clone git@github.com:Hazelwu2/hotel.git
   ```
 2. Install NPM packages
   ```
